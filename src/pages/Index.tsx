@@ -17,15 +17,16 @@ import {
 
 // Initialize Highcharts modules
 import Highcharts from "highcharts";
-import HighchartsMore from "highcharts/highcharts-more";
-import HighchartsSolidGauge from "highcharts/modules/solid-gauge";
-import HighchartsExporting from "highcharts/modules/exporting";
+// Import modules properly
+import HighchartsMoreModule from "highcharts/highcharts-more";
+import HighchartsSolidGaugeModule from "highcharts/modules/solid-gauge";
+import HighchartsExportingModule from "highcharts/modules/exporting";
 
-// Initialize the additional modules
-if (typeof Highcharts === "object") {
-  HighchartsMore(Highcharts);
-  HighchartsSolidGauge(Highcharts);
-  HighchartsExporting(Highcharts);
+// Initialize the additional modules correctly
+if (typeof window !== 'undefined') {
+  HighchartsMoreModule(Highcharts);
+  HighchartsSolidGaugeModule(Highcharts);
+  HighchartsExportingModule(Highcharts);
 }
 
 const Index = () => {

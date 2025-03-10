@@ -2,6 +2,18 @@
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 
+// Import modules properly
+import HighchartsMoreModule from "highcharts/highcharts-more";
+import HighchartsSolidGaugeModule from "highcharts/modules/solid-gauge";
+import HighchartsExportingModule from "highcharts/modules/exporting";
+
+// Initialize the additional modules correctly
+if (typeof window !== 'undefined') {
+  HighchartsMoreModule(Highcharts);
+  HighchartsSolidGaugeModule(Highcharts);
+  HighchartsExportingModule(Highcharts);
+}
+
 // Line Chart Component
 export const LineChart = () => {
   const options = {
